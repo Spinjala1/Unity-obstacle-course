@@ -4,10 +4,6 @@ using UnityEngine;
 
 public class Mover : MonoBehaviour
 {
-    // these variables change our movement speed
-    [SerializeField] float xValue = 0f;
-    [SerializeField] float yValue = 0.02f;
-    [SerializeField] float zValue = 0;
     // Start is called before the first frame update
     void Start()
     {
@@ -17,7 +13,9 @@ public class Mover : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        float xValue = Input.GetAxis("Horizontal");
-        transform.Translate(xValue,yValue,zValue);
+        float xValue = Input.GetAxis("Horizontal") * Time.deltaTime;
+        float zValue = Input.GetAxis("Vertical") * Time.deltaTime;
+        
+        transform.Translate(xValue,0,zValue);
     }
 }
