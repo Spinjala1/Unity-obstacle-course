@@ -5,12 +5,12 @@ using UnityEngine;
 
 public class Dropper : MonoBehaviour
 {
-    float timeToWait = 5f;
+   [SerializeField] float timeToWait = 5f;
 
     // Start is called before the first frame update
     void Start()
     {
-        
+        GetComponent<MeshRenderer>().enabled = false; 
     }
 
     // Update is called once per frame
